@@ -1,0 +1,214 @@
+
+@import "tailwindcss";
+
+/* ========================================
+   01. DESIGN TOKENS
+======================================== */
+
+:root {
+  color-scheme: dark;
+
+  /* Brand Colors */
+  --background: #0b0b0e;
+  --foreground: #f5f3f7;
+
+  --surface: #111115;
+  --surface-elevated: #17131f;
+  --surface-hover: #201a2b;
+
+  --purple: #8b5cf6;
+  --purple-light: #a78bfa;
+  --purple-dark: #6d3fd1;
+
+  --orange: #ff7628;
+  --orange-light: #ff965c;
+
+  --muted: #77717f;
+  --border: rgba(255, 255, 255, 0.09);
+  --border-active: rgba(139, 92, 246, 0.45);
+
+  /* Typography */
+  --font-heading: var(--font-poppins);
+  --font-body: var(--font-montserrat);
+
+  /* Layout */
+  --container-width: 1440px;
+  --page-padding: clamp(20px, 5vw, 80px);
+
+  /* Motion */
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========================================
+   02. TAILWIND CSS 4 THEME
+======================================== */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-surface-hover: var(--surface-hover);
+
+  --color-purple: var(--purple);
+  --color-purple-light: var(--purple-light);
+  --color-purple-dark: var(--purple-dark);
+
+  --color-orange: var(--orange);
+  --color-orange-light: var(--orange-light);
+
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+
+  --font-sans: var(--font-body);
+  --font-heading: var(--font-poppins);
+  --font-body: var(--font-montserrat);
+}
+
+/* ========================================
+   03. GLOBAL RESET
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--background);
+  scroll-behavior: auto;
+  scroll-padding-top: 24px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+
+  background: var(--background);
+  color: var(--foreground);
+
+  font-family: var(--font-montserrat), Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
+}
+
+::selection {
+  background: rgba(139, 92, 246, 0.35);
+  color: #ffffff;
+}
+
+/* ========================================
+   04. TYPOGRAPHY
+======================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+p {
+  margin: 0;
+}
+
+.font-heading {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.font-body {
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+/* ========================================
+   05. SCROLLBAR
+======================================== */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #393044 #0b0b0e;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0b0e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #393044;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--purple);
+}
+
+/* ========================================
+   06. ACCESSIBILITY
+======================================== */
+
+:focus-visible {
+  outline: 2px solid var(--purple-light);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
