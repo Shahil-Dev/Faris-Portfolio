@@ -1,4 +1,3 @@
-
 @import "tailwindcss";
 
 /* ========================================
@@ -210,5 +209,187 @@ p {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+/* Timeline Playhead Animation */
+
+.timeline-playhead {
+  left: 2%;
+  animation: timeline-playhead-motion 12s linear infinite;
+  will-change: left;
+}
+
+@keyframes timeline-playhead-motion {
+  from {
+    left: 2%;
+  }
+
+  to {
+    left: 95%;
+  }
+}
+
+
+/* ========================================
+   HIGH-END CINEMATIC ENHANCEMENT
+   STEP 01 — Ambient Lighting & Depth
+======================================== */
+
+.cinematic-workspace {
+  isolation: isolate;
+  background-image:
+    radial-gradient(
+      ellipse at 12% 8%,
+      rgba(139, 92, 246, 0.13),
+      transparent 34%
+    ),
+    radial-gradient(
+      ellipse at 88% 85%,
+      rgba(255, 118, 40, 0.09),
+      transparent 36%
+    );
+}
+
+.cinematic-frame {
+  border-color: rgba(167, 139, 250, 0.19);
+
+  box-shadow:
+    0 0 0 1px rgba(139, 92, 246, 0.04),
+    0 20px 80px rgba(0, 0, 0, 0.55),
+    0 0 45px rgba(139, 92, 246, 0.07),
+    0 0 90px rgba(255, 118, 40, 0.025);
+
+  transition:
+    border-color 350ms ease,
+    box-shadow 350ms ease;
+}
+
+@media (hover: hover) {
+  .cinematic-frame:hover {
+    border-color: rgba(167, 139, 250, 0.27);
+
+    box-shadow:
+      0 0 0 1px rgba(139, 92, 246, 0.06),
+      0 24px 90px rgba(0, 0, 0, 0.6),
+      0 0 55px rgba(139, 92, 246, 0.09),
+      0 0 100px rgba(255, 118, 40, 0.035);
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .cinematic-frame {
+    transition: none;
+  }
+}
+
+
+
+/* ========================================
+   STEP 02 — CINEMATIC COMPOSITION VIEWER
+======================================== */
+
+.cinematic-screen {
+  isolation: isolate;
+  background: #100d17;
+
+  box-shadow:
+    inset 0 0 50px rgba(139, 92, 246, 0.07),
+    inset 0 0 100px rgba(0, 0, 0, 0.3),
+    0 0 35px rgba(139, 92, 246, 0.08);
+}
+
+/* Richer cinematic background */
+
+.cinematic-screen-base {
+  transform: scale(1.02);
+  filter: saturate(1.2) contrast(1.04);
+}
+
+/* Subtle moving light sweep */
+
+.cinematic-screen::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: -30%;
+  bottom: -30%;
+  left: -45%;
+  width: 35%;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.015) 35%,
+    rgba(196, 181, 253, 0.09) 50%,
+    rgba(255, 255, 255, 0.025) 65%,
+    transparent 100%
+  );
+
+  transform: skewX(-18deg);
+  animation: cinematic-light-sweep 10s ease-in-out infinite;
+}
+
+@keyframes cinematic-light-sweep {
+  0%, 15% {
+    left: -45%;
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  65% {
+    left: 115%;
+    opacity: 0.7;
+  }
+
+  80%, 100% {
+    left: 115%;
+    opacity: 0;
+  }
+}
+
+/* Premium play button */
+
+.cinematic-play-button {
+  box-shadow:
+    0 0 0 6px rgba(167, 139, 250, 0.035),
+    0 0 25px rgba(139, 92, 246, 0.12),
+    inset 0 0 15px rgba(255, 255, 255, 0.035);
+
+  transition:
+    transform 300ms ease,
+    border-color 300ms ease,
+    background 300ms ease,
+    box-shadow 300ms ease;
+}
+
+@media (hover: hover) {
+  .cinematic-play-button:hover {
+    transform: scale(1.09);
+
+    border-color: rgba(196, 181, 253, 0.65);
+
+    background: rgba(139, 92, 246, 0.16);
+
+    box-shadow:
+      0 0 0 8px rgba(167, 139, 250, 0.05),
+      0 0 35px rgba(139, 92, 246, 0.3);
+  }
+}
+
+/* Motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .cinematic-screen::after {
+    animation: none;
+  }
+
+  .cinematic-play-button {
+    transition: none;
   }
 }

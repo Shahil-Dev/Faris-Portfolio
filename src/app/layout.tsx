@@ -35,7 +35,6 @@ export const metadata: Metadata = {
     "Video Editor Portfolio",
     "Property Video Production",
   ],
-  metadataBase: new URL("https://example.com"),
   openGraph: {
     title: "Real Estate Film Portfolio",
     description:
