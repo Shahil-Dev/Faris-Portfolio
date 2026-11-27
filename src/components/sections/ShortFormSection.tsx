@@ -440,10 +440,7 @@ export default function ShortFormSection() {
             transition={{ duration: 0.8, delay: 0.35 }}
             className="flex items-center gap-3 text-white/35"
           >
-            <Smartphone size={17} strokeWidth={1.5} />
-            <span className="text-[10px] font-medium tracking-[0.22em]">
-              VERTICAL VIDEO · 9:16
-            </span>
+          
           </motion.div>
         </motion.div>
 

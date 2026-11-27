@@ -1,4 +1,5 @@
 import HeroWorkspace from "../components/hero/HeroWorkspace";
+import AboutSection from "../components/sections/AboutSection";
 import LongFormSection from "../components/sections/LongFormSection";
 import ShortFormSection from "../components/sections/ShortFormSection";
 
@@ -8,6 +9,7 @@ export default function Home() {
       <HeroWorkspace />
       <LongFormSection />
       <ShortFormSection />
+      <AboutSection />
     </main>
   );
 }
