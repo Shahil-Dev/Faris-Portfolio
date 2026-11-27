@@ -3,6 +3,7 @@ import AboutSection from "../components/sections/AboutSection";
 import LongFormSection from "../components/sections/LongFormSection";
 import ShortFormSection from "../components/sections/ShortFormSection";
 import ThumbnailShowcase from "../components/sections/ThumbnailShowcase";
+import WorkflowSection from "../components/sections/WorkflowSection";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <ShortFormSection />
       <AboutSection />
       <ThumbnailShowcase />
+      <WorkflowSection />
     </main>
   );
 }
