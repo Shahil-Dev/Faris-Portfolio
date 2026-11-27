@@ -1,6 +1,7 @@
 import HeroWorkspace from "../components/hero/HeroWorkspace";
 import AboutSection from "../components/sections/AboutSection";
 import LongFormSection from "../components/sections/LongFormSection";
+import ServicesSection from "../components/sections/ServicesSection";
 import ShortFormSection from "../components/sections/ShortFormSection";
 import ThumbnailShowcase from "../components/sections/ThumbnailShowcase";
 import WorkflowSection from "../components/sections/WorkflowSection";
@@ -14,6 +15,7 @@ export default function Home() {
       <AboutSection />
       <ThumbnailShowcase />
       <WorkflowSection />
+      <ServicesSection />
     </main>
   );
 }
